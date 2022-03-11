@@ -2,10 +2,11 @@ package project.model;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
-public class HeaderTableModel extends AbstractTableModel {
+public class HeaderTableModel extends DefaultTableModel {
     String[] cols = {"No.", "Invoice Date", "Customer Name", "Total"};
-    ArrayList<InvoiceHeader> invoices;
+    ArrayList<InvoiceHeader> invoices = new ArrayList<>();
 
     public HeaderTableModel(ArrayList<InvoiceHeader> invoices) {
         this.invoices= invoices;
@@ -14,7 +15,10 @@ public class HeaderTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
+             if(this.invoices==null)
+             invoices=new ArrayList<>();
         return invoices.size();
+    
     }
 
  
@@ -43,6 +47,13 @@ public class HeaderTableModel extends AbstractTableModel {
     public ArrayList<InvoiceHeader> getInvoices() {
         return invoices;
     }
+
+    @Override
+    public void removeRow(int i) {
+        invoices.remove(i);
+    }
+    
+    
 
 }
 

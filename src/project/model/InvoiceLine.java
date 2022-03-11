@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package project.model;
 
 public class InvoiceLine  {
@@ -6,7 +11,10 @@ public class InvoiceLine  {
     private int count;
     private double itemTotal;
     private InvoiceHeader invoiceHeader;
-
+/**
+ *
+ * @author Zeinab
+ */
     public InvoiceLine(String itemName, double itemPrice, int count, InvoiceHeader invoiceHeader) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;

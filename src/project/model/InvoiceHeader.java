@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package project.model;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class InvoiceHeader {
     private Date invDate;
     private String cusName;
     private double InvTotal;
-    private ArrayList<InvoiceLine> lines;
+    private ArrayList<InvoiceLine> lines = new ArrayList<>();
 
     public InvoiceHeader(int invNum, Date invDate, String cusName) {
         this.invNum = invNum;
@@ -59,19 +58,22 @@ public class InvoiceHeader {
         this.InvTotal = InvTotal;
     }
 
-        public ArrayList<InvoiceLine> getLines() {
+    public ArrayList<InvoiceLine> getLines() {
         if (lines == null) {
             lines = new ArrayList<>();
         }
+
         return lines;
-}
+    }
+
     public void setLines(ArrayList<InvoiceLine> lines) {
         this.lines = lines;
     }
-    public void addLine(InvoiceLine Line){
-     getLines().add(Line);
-       setInvTotal(getInvTotal()+Line.getItemTotal());
-       
+
+    public void addLines(InvoiceLine Line) {
+        getLines().add(Line);
+        setInvTotal(getInvTotal() + Line.getItemTotal());
+
     }
-    
+
 }

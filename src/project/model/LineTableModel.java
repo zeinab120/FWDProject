@@ -2,15 +2,16 @@ package project.model;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Zeinab
  */
-public class LineTableModel extends AbstractTableModel {
+public class LineTableModel extends DefaultTableModel {
 
     String[] cols = {"Item Name", "Item Price", "Count", "Line Total"};
-    ArrayList<InvoiceLine> data;
+    ArrayList<InvoiceLine> data = new ArrayList<>();
 
     public LineTableModel(ArrayList<InvoiceLine> data) {
         this.data = data;
@@ -18,6 +19,8 @@ public class LineTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
+         if(this.data==null)
+             data=new ArrayList<>();
         return data.size();
     }
 
@@ -52,4 +55,11 @@ public class LineTableModel extends AbstractTableModel {
     public ArrayList<InvoiceLine> getData() {
         return data;
     }
+
+    @Override
+    public void removeRow(int i) {
+        data.remove(i);
+    }
+    
+    
 }
