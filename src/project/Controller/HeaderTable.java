@@ -1,14 +1,15 @@
-package project.model;
+package project.Controller;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import project.model.InvoiceHeader;
 
-public class HeaderTableModel extends DefaultTableModel {
+public class HeaderTable extends DefaultTableModel {
     String[] cols = {"No.", "Invoice Date", "Customer Name", "Total"};
     ArrayList<InvoiceHeader> invoices = new ArrayList<>();
 
-    public HeaderTableModel(ArrayList<InvoiceHeader> invoices) {
+    public HeaderTable(ArrayList<InvoiceHeader> invoices) {
         this.invoices= invoices;
     }
 

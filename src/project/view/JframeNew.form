@@ -302,7 +302,6 @@
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
         <Property name="text" type="java.lang.String" value="DeleteItem"/>
-        <Property name="actionCommand" type="java.lang.String" value="DeleteItem"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="jButton4.addActionListener(this);&#xd;&#xa;"/>

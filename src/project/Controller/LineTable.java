@@ -1,19 +1,21 @@
-package project.model;
+package project.Controller;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
+import project.model.InvoiceLine;
+import project.model.InvoiceLine;
 
 /**
  *
  * @author Zeinab
  */
-public class LineTableModel extends DefaultTableModel {
+public class LineTable extends DefaultTableModel {
 
     String[] cols = {"Item Name", "Item Price", "Count", "Line Total"};
     ArrayList<InvoiceLine> data = new ArrayList<>();
 
-    public LineTableModel(ArrayList<InvoiceLine> data) {
+    public LineTable(ArrayList<InvoiceLine> data) {
         this.data = data;
     }
 

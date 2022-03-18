@@ -23,8 +23,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import project.model.HeaderTableModel;
-import project.model.LineTableModel;
+import project.Controller.HeaderTable;
+import project.Controller.LineTable;
 import project.model.InvoiceHeader;
 import project.model.InvoiceLine;
 
@@ -337,8 +337,8 @@ public class JframeNew extends javax.swing.JFrame implements ActionListener, Lis
     // End of variables declaration//GEN-END:variables
 
     private ArrayList<InvoiceHeader> filesData = new ArrayList<>();
-    private HeaderTableModel headerTableModel;
-    private LineTableModel lineTableModel;
+    private HeaderTable headerTableModel;
+    private LineTable lineTableModel;
     private SimpleDateFormat DateFormat = new SimpleDateFormat("dd-mm-yyyy");
     private DialogToAddInvoice Dialog;
     private DialogForInvoiceLine LineDialog;
@@ -429,7 +429,7 @@ public class JframeNew extends javax.swing.JFrame implements ActionListener, Lis
                 }
                 bufferReader.close();
                 fileReader.close();
-                headerTableModel = new HeaderTableModel(filesData);
+                headerTableModel = new HeaderTable(filesData);
                 headerTable.setModel(headerTableModel);
                 headerTable.validate();
             }
@@ -476,7 +476,7 @@ public class JframeNew extends javax.swing.JFrame implements ActionListener, Lis
             InvNumber.setText("" + row.getInvNum());
             jLabel4.setText("" + row.getInvTotal());
             ArrayList<InvoiceLine> lines = row.getLines();
-            lineTableModel = new LineTableModel(lines);
+            lineTableModel = new LineTable(lines);
             lineTable.setModel(lineTableModel);
             lineTableModel.fireTableDataChanged();
         }
